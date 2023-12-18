@@ -1,0 +1,61 @@
+-- InsertDeleteQueries.txt
+-- Insert data into the Person table
+INSERT INTO Person (PersonID, FirstName, LastName, DOB, EmailAddress)
+VALUES
+(11, 'Alex', 'Johnson', '1991-08-25', 'alex.johnson@example.com'),
+(12, 'Emma', 'Lee', '1993-02-12', 'emma.lee@example.com'),
+(13, 'James', 'Brown', '1987-07-31', 'james.brown@example.com');
+-- Insert data into the Patient table
+INSERT INTO Patient (PatientID, DateSigned, NotSigned)
+27
+VALUES
+(11, '2023-07-20', 'No'),
+(12, '2023-07-19', 'Yes'),
+(13, '2023-07-18', 'No');
+-- Insert data into the MedicalRecord table
+INSERT INTO MedicalRecord (MedicalID, LastDate, PatientID)
+VALUES
+(11, '2023-07-22', 11),
+(12, '2023-07-21', 12),
+(13, '2023-07-23', 13);
+-- Insert data into the Appointments table
+INSERT INTO Appointments (AppointmentID, Date, PatientID)
+VALUES
+(11, '2023-07-25', 11),
+(12, '2023-07-26', 12),
+(13, '2023-07-27', 13);
+-- Insert data into the BillingRecord table
+INSERT INTO BillingRecord (BillingID, BillingDate, ProceduresPerformed,
+SupervisingDoctor, Doctor, MedicalProfessional, AppointmentID)
+VALUES
+(11, '2023-07-25', 2, 'Dr. Johnson', 'Dr. Brown', 'Medical Professional 11', 11),
+(12, '2023-07-26', 3, 'Dr. Lee', 'Dr. Johnson', 'Medical Professional 12', 12),
+(13, '2023-07-27', 1, 'Dr. Brown', 'Dr. Lee', 'Medical Professional 13', 13);
+-- Insert data into the Invoice table
+INSERT INTO Invoice (InvoiceID, QtyOfProcedures, InvoiceDate, AppointmentID,
+InsuranceID)
+VALUES
+(11, 2, '2023-07-25', 11, 1),
+(12, 3, '2023-07-26', 12, 2),
+(13, 1, '2023-07-27', 13, 3);
+-- Delete data from the Appointments table
+DELETE FROM Appointments WHERE AppointmentID = 11;
+DELETE FROM Appointments WHERE AppointmentID = 12;
+DELETE FROM Appointments WHERE AppointmentID = 13;
+28
+-- Delete data from the BillingRecord table
+DELETE FROM BillingRecord WHERE BillingID = 11;
+DELETE FROM BillingRecord WHERE BillingID = 12;
+DELETE FROM BillingRecord WHERE BillingID = 13;
+-- Delete data from the MedicalRecord table
+DELETE FROM MedicalRecord WHERE MedicalID = 11;
+DELETE FROM MedicalRecord WHERE MedicalID = 12;
+DELETE FROM MedicalRecord WHERE MedicalID = 13;
+-- Delete data from the Patient table
+DELETE FROM Patient WHERE PatientID = 11;
+DELETE FROM Patient WHERE PatientID = 12;
+DELETE FROM Patient WHERE PatientID = 13;
+-- Delete data from the Person table
+DELETE FROM Person WHERE PersonID = 11;
+DELETE FROM Person WHERE PersonID = 12;
+DELETE FROM Person WHERE PersonID = 13;
